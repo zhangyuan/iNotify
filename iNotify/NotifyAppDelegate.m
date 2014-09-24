@@ -7,6 +7,7 @@
 //
 
 #import "NotifyAppDelegate.h"
+#import "MessagesViewController.h"
 
 @implementation NotifyAppDelegate
 
@@ -20,6 +21,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    MessagesViewController *messagesViewController = [[MessagesViewController alloc] init];
+    self.window.rootViewController = messagesViewController;
     return YES;
 }
 

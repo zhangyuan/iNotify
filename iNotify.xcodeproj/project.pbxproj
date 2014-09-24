@@ -22,6 +22,7 @@
 		272A65E919D2E67C007734FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 272A65CD19D2E67C007734FA /* CoreData.framework */; };
 		272A65F119D2E67C007734FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 272A65EF19D2E67C007734FA /* InfoPlist.strings */; };
 		272A65F319D2E67C007734FA /* iNotifyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 272A65F219D2E67C007734FA /* iNotifyTests.m */; };
+		272A660019D2E7A6007734FA /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272A65FF19D2E7A6007734FA /* MessagesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		272A65EE19D2E67C007734FA /* iNotifyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iNotifyTests-Info.plist"; sourceTree = "<group>"; };
 		272A65F019D2E67C007734FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		272A65F219D2E67C007734FA /* iNotifyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iNotifyTests.m; sourceTree = "<group>"; };
+		272A65FE19D2E7A6007734FA /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesViewController.h; path = iNotify/Controllers/MessagesViewController.h; sourceTree = "<group>"; };
+		272A65FF19D2E7A6007734FA /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesViewController.m; path = iNotify/Controllers/MessagesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 		272A65BB19D2E67C007734FA = {
 			isa = PBXGroup;
 			children = (
+				272A65FE19D2E7A6007734FA /* MessagesViewController.h */,
+				272A65FF19D2E7A6007734FA /* MessagesViewController.m */,
 				272A65CF19D2E67C007734FA /* iNotify */,
 				272A65EC19D2E67C007734FA /* iNotifyTests */,
 				272A65C619D2E67C007734FA /* Frameworks */,
@@ -251,6 +256,7 @@
 			files = (
 				272A65D619D2E67C007734FA /* main.m in Sources */,
 				272A65DD19D2E67C007734FA /* iNotify.xcdatamodeld in Sources */,
+				272A660019D2E7A6007734FA /* MessagesViewController.m in Sources */,
 				272A65DA19D2E67C007734FA /* NotifyAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +454,7 @@
 				272A65F819D2E67C007734FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		272A65F919D2E67C007734FA /* Build configuration list for PBXNativeTarget "iNotifyTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +463,7 @@
 				272A65FB19D2E67C007734FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
