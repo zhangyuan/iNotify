@@ -8,7 +8,7 @@
 
 #import "MessagesViewController.h"
 
-@interface MessagesViewController ()
+@interface MessagesViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @end
 
@@ -28,7 +28,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+//    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    UITableView *tableView = [[UITableView alloc] initWithFrame: CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 20)];
+    tableView.delegate = self;
+    tableView.dataSource= self;
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [tableView reloadData];
+    self.tableView = tableView;
+    
     [self.view addSubview: self.tableView];
 }
 
@@ -48,5 +55,33 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath] ;
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+
+    cell.textLabel.text= [NSString stringWithFormat:@"Placeholder %d", indexPath.item];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Row Selected" message:@"You've selected a row" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    // Display Alert Message
+    [messageAlert show];
+    
+}
 
 @end
